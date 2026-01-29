@@ -18,19 +18,24 @@ final class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('الاسم')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('email')
+                    ->label('البريد الإلكتروني')
                     ->searchable(),
                 TextColumn::make('email_verified_at')
+                    ->label('تاريخ تحقق البريد')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('created_at')
+                    ->label('تاريخ الإنشاء')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
                 TextColumn::make('updated_at')
+                    ->label('تاريخ التحديث')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
