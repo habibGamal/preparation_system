@@ -49,7 +49,7 @@ class DeployCommand extends Command
             }
 
             // Execute the deploy script
-            $result = Process::timeout(60*6)->run('sudo /bin/sh /var/www/turbo_restaurant/larament/deploy.sh');
+            $result = Process::timeout(60*6)->run('sudo /bin/sh /var/www/preparation_system/deploy.sh');
 
             if ($result->failed()) {
                 throw new Exception('Deployment script failed: ' . $result->errorOutput());
