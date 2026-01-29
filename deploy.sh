@@ -4,7 +4,7 @@ set -e  # Exit on any error
 echo "🚀 Starting deployment..."
 
 # Get the script's directory
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DIR="/var/www/preparation_system"
 cd "$SCRIPT_DIR"
 
 echo "📁 Working directory: $SCRIPT_DIR"
