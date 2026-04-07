@@ -40,7 +40,7 @@ final class AdminPanelProvider extends PanelProvider
                     ->recoverable(),
             )
             ->sidebarCollapsibleOnDesktop()
-//            ->topNavigation()
+        //    ->topNavigation()
             ->colors([
                 'primary' => Color::Blue,
             ])
@@ -66,6 +66,7 @@ final class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            ->databaseNotifications()
             ->authMiddleware([
                 Authenticate::class,
             ])->globalSearchFieldSuffix(fn (): ?string => match (Platform::detect()) {

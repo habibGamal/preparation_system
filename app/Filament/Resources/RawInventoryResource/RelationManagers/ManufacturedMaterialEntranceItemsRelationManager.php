@@ -49,11 +49,11 @@ final class ManufacturedMaterialEntranceItemsRelationManager extends RelationMan
                 TextColumn::make('manufacturedMaterialEntrance.status')
                     ->label('الحالة')
                     ->badge(),
-                TextColumn::make('manufacturedMaterialEntrance.created_at')
+                TextColumn::make('manufacturedMaterialEntrance.closed_at')
                     ->label('تاريخ الإدخال')
                     ->dateTime()
                     ->sortable(),
             ])
-            ->defaultSort('manufacturedMaterialEntrance.created_at', 'desc');
+            ->defaultSort('manufacturedMaterialEntrance.closed_at', 'desc');
     }
 }

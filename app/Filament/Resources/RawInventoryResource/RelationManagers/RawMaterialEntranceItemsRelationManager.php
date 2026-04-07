@@ -49,11 +49,11 @@ final class RawMaterialEntranceItemsRelationManager extends RelationManager
                 TextColumn::make('rawMaterialEntrance.status')
                     ->label('الحالة')
                     ->badge(),
-                TextColumn::make('rawMaterialEntrance.created_at')
+                TextColumn::make('rawMaterialEntrance.closed_at')
                     ->label('تاريخ الإدخال')
                     ->dateTime()
                     ->sortable(),
             ])
-            ->defaultSort('rawMaterialEntrance.created_at', 'desc');
+            ->defaultSort('rawMaterialEntrance.closed_at', 'desc');
     }
 }
