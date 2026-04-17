@@ -11,6 +11,7 @@ use App\Observers\ProductObserver;
 use App\Observers\StocktakingObserver;
 use App\Observers\WasteObserver;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 final class AppServiceProvider extends ServiceProvider
@@ -27,6 +28,11 @@ final class AppServiceProvider extends ServiceProvider
 
         Product::observe(ProductObserver::class);
         $this->configureTable();
+
+
+        if (request()->isSecure() || request()->header('X-Forwarded-Proto') === 'https') {
+            URL::forceScheme('https');
+        }
     }
 
     private function configureTable(): void
